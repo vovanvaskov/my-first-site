@@ -1,0 +1,13 @@
+{% extends 'wallpapers/base.html' %}
+
+{% block title %}Wallpaper{% endblock %}
+
+{% block content %}
+
+    <p><input type="button" onclick="history.back();" value="Back" class="btn"></p>
+
+    <div class="a_wall"><img src="{{ wall.image.url }}"></div>
+
+    <div class="download"><p><a href="{{ wall.image.url }}" download="">Download</a></p></div>
+
+{% endblock %}

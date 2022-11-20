@@ -1,0 +1,21 @@
+{% extends 'wallpapers/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    
+    <nav>
+        <div class="device_nav">
+            {% for device in nav %}
+                <div class="device"><a href="{% url 'device' device.pk %}">{{ device }}</a></div>
+            {% endfor %}
+        </div>
+    </nav>
+
+    <div class="wallpaper">
+        {% for wall in object_list %}
+            <div class='cell'><a href="{% url 'wall' wall.pk %}"><img src="{{ wall.image.url }}"></a></div>
+        {% endfor %}
+    </div>
+        
+{% endblock %}
